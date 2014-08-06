@@ -1,0 +1,22 @@
+{
+  "name": "waterline-global",
+  "version": "0.1.0",
+  "description": "Utility to easy the use of Waterline ORM across an application",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/thomasdashney/waterline-global.git"
+  },
+  "keywords": [
+    "waterline",
+    "node",
+    "orm",
+    "global"
+  ],
+  "author": "Thomas Dashney <tdashney@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/thomasdashney/waterline-global/issues"
+  },
+  "homepage": "https://github.com/thomasdashney/waterline-global"
+}
