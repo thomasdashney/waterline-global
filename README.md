@@ -6,7 +6,7 @@ Utility to easy the use of Waterline ORM across an application. It hooks into yo
 Installation
 ----------
 ```bash
-npm install git://github.com/thomasdashney/waterline-global
+nom install --save git://github.com/thomasdashney/waterline-global
 ```
 Usage
 ----------
