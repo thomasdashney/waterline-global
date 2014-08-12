@@ -55,6 +55,9 @@ exports.initialize = function(config, callback) {
         return cb('error loading models: ' + err);
 
       orm.initialize(config, function(err, data) {
+        if (err)
+          return callback(err);
+        
         exports.models = data.collections;
         exports.connections = data.connections;
 
