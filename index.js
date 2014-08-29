@@ -23,7 +23,6 @@ exports.models = null;
  * @param  {Function} cb     [callback(err)]
  */
 exports.initialize = function(config, callback) {
-  console.log(config.modelsDir);
   // take modelsDir if defined, or project dir
   var modelsDir = config.modelsDir || 
                   path.dirname(require.main.filename) + '/models';
