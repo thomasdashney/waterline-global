@@ -23,23 +23,26 @@ exports.models = null;
  * @param  {Function} cb     [callback(err)]
  */
 exports.initialize = function(config, callback) {
-
-  var projectDir = path.dirname(require.main.filename);
+  console.log(config.modelsDir);
+  // take modelsDir if defined, or project dir
+  var modelsDir = config.modelsDir || 
+                  path.dirname(require.main.filename) + '/models';
+                  
+  modelsDir = path.resolve(modelsDir);
 
   var orm = new Waterline();
 
   // bootload all of our models
-  fs.readdir(projectDir + '/models', function(err, files) {
+  fs.readdir(modelsDir, function(err, files) {
     if (err)
       return callback('error reading files: ' + err);
 
     async.each(files, function(filename, cb) {
-      var filePath = projectDir + '/models/' + filename;
+      var filePath = modelsDir + '/' + filename;
       var fileExtension = path.extname(filename);
       // if not .js file, don't process file
       if (fileExtension !== '.js') 
         return cb();
-      var name = path.basename(filePath, '.js');
 
       // load module
       var model = require(filePath);
@@ -52,7 +55,7 @@ exports.initialize = function(config, callback) {
       cb();
     }, function (err) {
       if (err)
-        return cb('error loading models: ' + err);
+        return callback('error loading models: ' + err);
 
       orm.initialize(config, function(err, data) {
         if (err)
@@ -65,4 +68,4 @@ exports.initialize = function(config, callback) {
       });
     });
   });
-}
+};
