@@ -1,7 +1,7 @@
 Waterline-Global
 ================
 
-Utility to easy the use of Waterline ORM across an application. It hooks into your `models/` directory and pulls in all of your models.
+Utility to ease the use of Waterline ORM across an application. It hooks into your `models/` directory and pulls in all of your models.
 
 Installation
 ----------
